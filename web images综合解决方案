@@ -1,0 +1,17 @@
+大图，复杂图片使用jpeg, 结合jpegtran工具压缩
+小图使用png8, 结合pngoo导入png32导出png8
+动图gif
+
+项目中应减少用图，减少请求、控制大小、利于缓存
+
+使用svg,css3,canvas代替一些可替代图片
+sprites可以处理一些常用小图片，优点：减少请求，做到排列整齐，可以减少图片大小和优化内存，缺点：但缓存不太友好，有改动时候需要重新下载。
+base64适用sprite无法处理几k小图，例如平铺，优点：可以减少请求，缺点：相比原图片体积变大，大图片更明显，过多造成css变大不利于加载。url-loader可做限制对几k小图做base64处理。
+
+比起图片，除了css3，还可以使用iconfont,嵌入页面。
+
+综合方案：
+移动端：webpack配置url-loader限制几k使用base64，大于该限制的图片使用css3,svg,canvas
+
+PC端：兼容ie8以上，webpack配置url-loader限制几k使用base64, 大于该限制图片使用iconfont
+
