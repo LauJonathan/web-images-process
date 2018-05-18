@@ -18,6 +18,7 @@ ionfont字体格式有：
 .eot: ie专用字体，支持浏览器IE4+
 .svg: 基于svg字体渲染一种格式，支持浏览器chrome4+,safari3.1+,opera10.0+,ios Mobile safari3.2+
 
+svgicon比iconfont耗渲染并且大，且存在pc浏览器兼容问题
 ？？？svgicon支持ie8？
 
 综合方案：
