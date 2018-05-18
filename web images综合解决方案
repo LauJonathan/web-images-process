@@ -18,10 +18,12 @@ ionfont字体格式有：
 .eot: ie专用字体，支持浏览器IE4+
 .svg: 基于svg字体渲染一种格式，支持浏览器chrome4+,safari3.1+,opera10.0+,ios Mobile safari3.2+
 
-综合方案：
-移动端：webpack配置url-loader限制2k使用base64、图片优先考虑css3,svg,canvas，后使用iconfont，部分色彩丰富小图片sprites, 使用基础图片原型。
+？？？svgicon支持ie8？
 
-PC端：兼容ie8以上，webpack配置url-loader限制2k使用base64、图片优先考虑使用iconfont，部分色彩丰富小图片sprites，后考虑压缩后的图片格式；
+综合方案：
+移动端：webpack配置url-loader限制2k使用base64、图片优先考虑css3,svg,canvas，后使用iconfont处理单色图，部分色彩丰富小图片sprites, svgicon使用基础图片原型。
+
+PC端：兼容ie8以上，webpack配置url-loader限制2k使用base64、图片优先考虑使用iconfont处理单色图，处理色彩丰富常用小图片sprites，后考虑压缩后的图片格式；
 
 
 https://www.aliyun.com/jiaocheng/666337.html
