@@ -9,7 +9,7 @@
 sprites可以处理一些常用小图片，优点：减少请求，做到排列整齐，可以减少图片大小和优化内存，缺点：但缓存不太友好，有改动时候需要重新下载。
 base64适用sprite无法处理的，页面总数不多且小于2k的图，例如平铺，优点：可以减少请求，缺点：相比原图片体积变大，大图片更明显，过多造成css变大不利于加载。url-loader可做限制对几k小图做base64处理。
 
-iconfont,将图片转成字体格式嵌入页面，可替代sprites使用，缺点：适用于256单色和css3渐变图标，也是此限制不能成为被广泛推广原因。
+iconfont,将图片转成字体格式嵌入页面，可替代sprites处理一些单色图片使用，缺点：适用于256单色和css3渐变图标，也是此限制不能成为被广泛推广原因。
 文件小，以往常用的sprite图如果要放上上百个图标，那么这张图的大小可能有100k+，而上百个图标做成的iconfont文件，往往只有十几k
 ionfont字体格式有：
 .ttf: RAW格式，不为网站优化，支持浏览器IE9+,firefox3.5+,chrome4+,safari3+,opera10+,ios mobile safari4.2+
@@ -19,9 +19,9 @@ ionfont字体格式有：
 .svg: 基于svg字体渲染一种格式，支持浏览器chrome4+,safari3.1+,opera10.0+,ios Mobile safari3.2+
 
 综合方案：
-移动端：webpack配置url-loader限制2k使用base64、图片优先考虑css3,svg,canvas，后使用iconfont，后使用基础图片原型。
+移动端：webpack配置url-loader限制2k使用base64、图片优先考虑css3,svg,canvas，后使用iconfont，部分色彩丰富小图片sprites, 使用基础图片原型。
 
-PC端：兼容ie8以上，webpack配置url-loader限制2k使用base64、图片优先考虑使用iconfont，后考虑压缩后的图片格式；
+PC端：兼容ie8以上，webpack配置url-loader限制2k使用base64、图片优先考虑使用iconfont，部分色彩丰富小图片sprites，后考虑压缩后的图片格式；
 
 
 https://www.aliyun.com/jiaocheng/666337.html
